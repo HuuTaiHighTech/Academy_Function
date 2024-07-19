@@ -48,8 +48,13 @@ return [
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
+<<<<<<< HEAD
             'charset' => env('DB_CHARSET', 'utf8mb4'),
             'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+=======
+            'charset' => env('DB_CHARSET', 'utf8'),
+            'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
+>>>>>>> b80dd2f (init commit)
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
@@ -144,7 +149,11 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
+<<<<<<< HEAD
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+=======
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
+>>>>>>> b80dd2f (init commit)
         ],
 
         'default' => [

@@ -23,11 +23,27 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+<<<<<<< HEAD
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
+=======
+        // return [
+        //     'name' => fake()->name(),
+        //     'email' => fake()->unique()->safeEmail(),
+        //     'email_verified_at' => now(),
+        //     'password' => static::$password ??= Hash::make('password'),
+        //     'remember_token' => Str::random(10),
+        // ];
+        return [
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'), // hoặc bcrypt('password')
+            'role' => $this->faker->randomElement(['USER', 'ADMIN']),
+>>>>>>> b80dd2f (init commit)
             'remember_token' => Str::random(10),
         ];
     }

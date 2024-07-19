@@ -15,9 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+<<<<<<< HEAD
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+=======
+            $table->string('password');
+            $table->enum('role', ['USER', 'ADMIN'])->default('USER');
+            $table->rememberToken();
+            $table->timestamp('email_verified_at')->nullable();
+>>>>>>> b80dd2f (init commit)
             $table->timestamps();
         });
 

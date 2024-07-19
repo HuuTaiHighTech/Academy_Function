@@ -78,11 +78,19 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'locale' => env('APP_LOCALE', 'en'),
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+=======
+    'locale' => env('APP_LOCALE', 'vi'),
+
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+
+    'faker_locale' => env('APP_FAKER_LOCALE', 'vi_VN'),
+>>>>>>> b80dd2f (init commit)
 
     /*
     |--------------------------------------------------------------------------

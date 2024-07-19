@@ -2,12 +2,30 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
+<<<<<<< HEAD
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9"
+=======
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "barryvdh/laravel-dompdf": "^2.2",
+        "doctrine/dbal": "^4.0",
+        "laravel/framework": "^11.0",
+        "laravel/sanctum": "^4.0",
+        "laravel/tinker": "^2.9",
+        "payos/payos": "^1.0",
+        "phpmailer/phpmailer": "^6.9",
+        "simplesoftwareio/simple-qrcode": "^4.2"
+>>>>>>> b80dd2f (init commit)
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

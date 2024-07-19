@@ -26,7 +26,11 @@ return [
     | well as their drivers. You may even define multiple stores for the
     | same cache driver to group types of items stored in your caches.
     |
+<<<<<<< HEAD
     | Supported drivers: "array", "database", "file", "memcached",
+=======
+    | Supported drivers: "apc", "array", "database", "file", "memcached",
+>>>>>>> b80dd2f (init commit)
     |                    "redis", "dynamodb", "octane", "null"
     |
     */

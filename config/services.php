@@ -24,10 +24,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+<<<<<<< HEAD
     'resend' => [
         'key' => env('RESEND_KEY'),
     ],
 
+=======
+>>>>>>> b80dd2f (init commit)
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
@@ -35,4 +38,11 @@ return [
         ],
     ],
 
+<<<<<<< HEAD
+=======
+    'api' => [
+        'courses' => 'http://127.0.0.1:8001/api/courses/'
+    ]
+
+>>>>>>> b80dd2f (init commit)
 ];
