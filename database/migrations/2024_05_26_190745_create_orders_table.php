@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->uuid('code');
+            $table->uuid('code')->unique();
             $table->unsignedBigInteger('user_id');
             $table->text('promotion')->nullable();
             $table->integer('discount')->default(0);

@@ -14,7 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-
+    'asset_url' => env('ASSET_URL', 'https://cartacadamy-9a1fa6c14b8c.herokuapp.com/'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment

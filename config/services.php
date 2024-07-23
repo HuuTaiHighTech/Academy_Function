@@ -41,7 +41,7 @@ return [
 <<<<<<< HEAD
 =======
     'api' => [
-        'courses' => 'http://127.0.0.1:8001/api/courses/'
+        'courses' => 'https://courseacadamy-73d8b55b2c59.herokuapp.com/api/courses/'
     ]
 
 >>>>>>> b80dd2f (init commit)

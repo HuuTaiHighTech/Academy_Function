@@ -1,26 +1,32 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2.0
 
-WORKDIR /var/www
-
-RUN apk update \
-    && apk add --no-cache \
-    libjpeg-turbo-dev \
+# Cài đặt các phụ thuộc
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libmcrypt-dev \
     libpng-dev \
-    libwebp-dev \
-    freetype-dev \
+    zlib1g-dev \
+    libxml2-dev \
     libzip-dev \
-    zip \
-    && docker-php-ext-install pdo pdo_mysql \
-    && docker-php-ext-install mysqli && docker-php-ext-enable mysqli \
-    && docker-php-ext-install exif \
-    && docker-php-ext-install zip \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd
+    libonig-dev \
+    graphviz \
+    && docker-php-ext-configure gd \
+    && docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli zip sockets \
+    && docker-php-source delete
 
-COPY ./docker/php/php.ini /usr/local/etc/php/
+# Cài đặt Composer
+RUN curl -sS https://getcomposer.org/installer | php -- \
+    --install-dir=/usr/local/bin --filename=composer
+
+# Thiết lập thư mục làm việc
+WORKDIR /app
 COPY . .
-COPY --from=composer /usr/bin/composer /usr/bin/composer
 
+# Cài đặt các thư viện PHP qua Composer
 RUN composer install
-# RUN php artisan migrate
-RUN php artisan key:generate
+
+
+# Khởi động ứng dụng Laravel
+CMD php artisan serve --host=0.0.0.0 --port=${PORT}
+
